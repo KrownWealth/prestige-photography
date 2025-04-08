@@ -6,12 +6,14 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./views/**/*.{js,ts,jsx,tsx,mdx}",
+    "./view/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@heroui/theme/dist/components/modal.js",
   ],
   theme: {
     extend: {
       colors: {
         brandPrimary: "#eeba2c",
+        brandPrimaryLightShade: "#fdf8ea",
         brandSecondary: "#161616",
         brandLightGray: "#212121",
         brandLighterGray: "#262626",

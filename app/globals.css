@@ -83,7 +83,7 @@
   }
   .dark {
 
-    --background: 0 0% 3.9%;
+    --background: 0 0% 0%;
 
     --foreground: 0 0% 98%;
 
@@ -152,6 +152,22 @@
     ::-webkit-scrollbar {
         display: none;
     }
+
+}
+@media (width >= 1024px) {
+    .lg\:text-8xl {
+        font-size: 6rem;
+        line-height: 0.9!important;
+    }
 }
 
+.list{
+  columns: 300px;
+  margin-top: 20px;
+}
 
+.list > img{
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 0.5rem;
+}

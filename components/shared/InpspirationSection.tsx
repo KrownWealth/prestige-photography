@@ -7,7 +7,7 @@ import {
   Card,
 } from "@/components/ui/card"
 
-export function Featured() {
+export function InspirationLoaded() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
@@ -22,11 +22,21 @@ export function Featured() {
         >
 
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold dark:text-brandPrimaryLightShade z-10 ">
-            Welcome to the nicest studio to take a shot 📷
+            Photography,   <br />
+            <span>Tailored to You.</span>
           </h1>
         </motion.div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 md:gap-x-4'>
-          <Card className="relative h-80 overflow-hidden border-0 shadow-none mb-8 md:mb-0">
+          <div className="flex flex-col gap-y-8 max-w-md items-start justify-start ">
+            <p className="text-sm md:text-lg">
+              No cookie-cutter sessions. No stiff poses. Just real moments, creatively captured.
+              Our team of passionate photographers works with you to craft visuals that reflect your vibe,
+              your energy, your story.</p>
+
+            <p className='uppercase font-semibold text-brandPrimary underline text-xl'>Inspiration Fully Loaded </p>
+          </div>
+
+          <Card className="relative h-80 overflow-hidden border-0 shadow-none  mb-8 md:mb-0">
             <img
               src="/images/hero-image-photography.jpg"
               alt="Sample"
@@ -64,13 +74,6 @@ export function Featured() {
             </div>
           </Card>
 
-
-          <div className="flex flex-col gap-y-8 max-w-md items-start justify-start">
-            <p className="text-sm md:text-lg"> Prestige Photography is a one of the best photography studio in town: we&apos;re here
-              to help you created unforgettable memeories. Get pictured. Get feedback. Get lost in a world of new photo style! We&apos;ve got you covered.</p>
-
-            <p className='uppercase font-semibold text-brandPrimary underline text-xl'>best. Studio. Ever.</p>
-          </div>
         </div>
       </div>
     </section>

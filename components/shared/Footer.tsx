@@ -2,42 +2,33 @@ import Link from "next/link"
 import { Instagram, Facebook, Twitter } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background px-8">
+    <footer className="bg-background px-8">
       <div className="container flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-12">
         <div className="flex flex-col gap-2">
           <Link href="/" className="text-lg font-bold">
-            Photography Portfolio
+            <Image
+              src="/images/prestige-logo.png"
+              alt="Site Logo"
+              width={150}
+              height={150}
+              className="h-auto w-[150px]"
+            />
           </Link>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            Capturing life's special moments with artistry and passion.
+          <p className="text-sm md:text-lg text-gray-500 dark:text-gray-400">
+            Capturing life's special moments <br /> with artistry and passion.
           </p>
         </div>
-        <nav className="flex gap-4 sm:gap-6">
+        <nav className="flex gap-x-6 text-lg font-medium uppercase">
           <Link href="/about" className="text-sm hover:underline underline-offset-4">
             About
           </Link>
           <Link href="/gallery" className="text-sm hover:underline underline-offset-4">
             Gallery
           </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="text-sm hover:underline underline-offset-4 flex items-center gap-1">
-              Categories <ChevronDown className="h-3 w-3" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem asChild>
-                <Link href="/categories/weddings">Weddings</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/categories/events">Events</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/categories/birthday-shots">Birthday Shots</Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
           <Link href="/contact" className="text-sm hover:underline underline-offset-4">
             Contact
           </Link>
@@ -75,7 +66,7 @@ export function Footer() {
           </Link>
         </div>
       </div>
-      <div className="border-t py-6">
+      <div className="border-t border-t-gray-200 py-6">
         <div className="container flex flex-col items-center justify-center gap-2 md:flex-row md:justify-between">
           <p className="text-center text-sm text-gray-500 dark:text-gray-400">
             © {new Date().getFullYear()} Photography Portfolio. All rights reserved.

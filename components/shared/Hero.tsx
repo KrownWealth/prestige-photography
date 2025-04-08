@@ -11,21 +11,22 @@ export function Hero() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-black" ref={ref}>
+    <section className="relative min-h-screen w-full overflow-hidden bg-background" ref={ref}>
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black to-black/70 z-0" />
+      <div className="absolute inset-0 dark:bg-gradient-to-br from-black to-black/70 z-0" />
 
       {/* Main content container */}
       <div className="relative z-10 h-full w-full flex flex-col lg:flex-row items-center justify-between
-       px-4 lg:px-8 gap-12 max-w-screen-2xl mx-auto">
+       px-4 lg:px-12 gap-12 max-w-screen-2xl mx-auto">
         {/* Left side - Text content */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="w-full pt-16 lg:pt-8 items-center justify-center flex flex-col lg:items-start lg:justify-start text-center lg:text-left"
+          className="w-full pt-16 lg:pt-8 items-center justify-center 
+          flex flex-col lg:items-start lg:justify-start text-center lg:text-left"
         >
-          <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold leading-tight">
+          <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold leading-tight ">
             Capturing Moments &
             <br />
             <span className="text-yellow-400">Lifetime Memories.</span>

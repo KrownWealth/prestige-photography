@@ -30,11 +30,11 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         isScrolled
-          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b shadow-sm"
+          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
           : "bg-background",
       )}
     >
-      <div className="mx-auto flex h-16 w-full max-w-[90rem] items-center justify-between  px-4 lg:px-8">
+      <div className="mx-auto flex h-16 w-full max-w-screen-2xl items-center justify-between  px-4 lg:px-8">
         {/* Left side: Logo and Navigation */}
         <div className="flex items-center gap-x-10">
           <Link href="/" className="flex shrink-0 items-center">
@@ -54,29 +54,13 @@ export function Header() {
             <Link href="/gallery" className="whitespace-nowrap rounded-md px-3 py-1.5 transition-colors hover:bg-accent/50 hover:text-foreground/80">
               Gallery
             </Link>
-            <div className="group relative">
-              <Link
-                href="/categories"
-                className="flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-1.5 transition-colors hover:bg-accent/50 hover:text-foreground/80"
-              >
-                Categories <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-              </Link>
-              <div className="invisible absolute left-0 top-full z-50 mt-1 w-48 rounded-md border bg-popover p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                <Link href="/categories/weddings" className="block rounded-md px-3 py-2 text-sm hover:bg-accent">
-                  Weddings
-                </Link>
-                <Link href="/categories/events" className="block rounded-md px-3 py-2 text-sm hover:bg-accent">
-                  Events
-                </Link>
-                <Link href="/categories/birthday-shots" className="block rounded-md px-3 py-2 text-sm hover:bg-accent">
-                  Birthday Shots
-                </Link>
-              </div>
-            </div>
-            <Link href="/about" className="whitespace-nowrap rounded-md px-3 py-1.5 transition-colors hover:bg-accent/50 hover:text-foreground/80">
+            <Link href="#testimonials" className="whitespace-nowrap rounded-md px-3 py-1.5 transition-colors hover:bg-accent/50 hover:text-foreground/80">
+              Testimonials
+            </Link>
+            <Link href="#about" className="whitespace-nowrap rounded-md px-3 py-1.5 transition-colors hover:bg-accent/50 hover:text-foreground/80">
               About
             </Link>
-            <Link href="/contact" className="whitespace-nowrap rounded-md px-3 py-1.5 transition-colors hover:bg-accent/50 hover:text-foreground/80">
+            <Link href="#contact" className="whitespace-nowrap rounded-md px-3 py-1.5 transition-colors hover:bg-accent/50 hover:text-foreground/80">
               Contact
             </Link>
           </nav>

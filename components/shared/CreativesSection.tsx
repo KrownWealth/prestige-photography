@@ -7,13 +7,14 @@ import {
   Card,
 } from "@/components/ui/card"
 
-export function Featured() {
+export function Creatives() {
+
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section className="relative w-full overflow-hidden bg-background" ref={ref}>
-      <div className="px-4 lg:px-8 flex flex-col max-w-screen-2xl mx-auto pt-16 pb-10">
+    <section className="relative w-full overflow-hidden bg-backgound" ref={ref}>
+      <div className="px-4 lg:px-8 flex flex-col max-w-screen-2xl mx-auto  pt-16 pb-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -22,7 +23,8 @@ export function Featured() {
         >
 
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold dark:text-brandPrimaryLightShade z-10 ">
-            Welcome to the nicest studio to take a shot 📷
+            Your Style.  <br />
+            <span>Our Creatives.</span>
           </h1>
         </motion.div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 md:gap-x-4'>
@@ -43,6 +45,15 @@ export function Featured() {
               </p>
             </div>
           </Card>
+
+          <div className="flex flex-col gap-y-8 max-w-md items-start justify-center order-3 md:order-2">
+            <p className="text-sm md:text-lg">
+              We don&apos;t just take pictures — we capture your essence. From bold personal brands to
+              timeless portraits, we blend your vision with our artistry to create photos that feel like you.
+            </p>
+
+            <p className='uppercase font-semibold text-brandPrimary underline text-xl'>Essence. Creativity. Artistry.</p>
+          </div>
 
           <Card className="relative h-80 overflow-hidden -top-12 border-0 shadow-none">
             <img
@@ -65,14 +76,9 @@ export function Featured() {
           </Card>
 
 
-          <div className="flex flex-col gap-y-8 max-w-md items-start justify-start">
-            <p className="text-sm md:text-lg"> Prestige Photography is a one of the best photography studio in town: we&apos;re here
-              to help you created unforgettable memeories. Get pictured. Get feedback. Get lost in a world of new photo style! We&apos;ve got you covered.</p>
 
-            <p className='uppercase font-semibold text-brandPrimary underline text-xl'>best. Studio. Ever.</p>
-          </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

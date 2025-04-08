@@ -6,27 +6,31 @@ import { motion, useInView } from "framer-motion"
 import {
   Card,
 } from "@/components/ui/card"
+import { Star } from 'lucide-react'
+import { Button } from '../ui/button'
+import Link from 'next/link'
 
-export function Featured() {
+export function More() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
   return (
     <section className="relative w-full overflow-hidden bg-background" ref={ref}>
-      <div className="px-4 lg:px-8 flex flex-col max-w-screen-2xl mx-auto pt-16 pb-10">
+      <div className="px-4 lg:px-8 flex flex-col max-w-screen-2xl mx-auto pt-16 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mb-16 md:max-w-3xl"
+          className="mb-20 md:max-w-4xl"
         >
 
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold dark:text-brandPrimaryLightShade z-10 ">
-            Welcome to the nicest studio to take a shot 📷
+            Want More?  <br />
+            <span>View Our Gallery.</span>
           </h1>
         </motion.div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 md:gap-x-4'>
-          <Card className="relative h-80 overflow-hidden border-0 shadow-none mb-8 md:mb-0">
+          <Card className="relative h-80 overflow-hidden border-0 shadow-none  mb-8 md:mb-0">
             <img
               src="/images/hero-image-photography.jpg"
               alt="Sample"
@@ -66,10 +70,18 @@ export function Featured() {
 
 
           <div className="flex flex-col gap-y-8 max-w-md items-start justify-start">
-            <p className="text-sm md:text-lg"> Prestige Photography is a one of the best photography studio in town: we&apos;re here
-              to help you created unforgettable memeories. Get pictured. Get feedback. Get lost in a world of new photo style! We&apos;ve got you covered.</p>
+            <p className="text-sm md:text-lg">
+              The best way to feel and view all our creatives and more is with Prestige Gallery.
+            </p>
+            <p className="flex text-sm text-white items-center gap-x-2"><span><Star fill="#eeba2c" strokeWidth={0}
+              className="w-6 h-6 text-brandPrimary" /></span> Not that tiny camera you wear on your forehead.</p>
 
-            <p className='uppercase font-semibold text-brandPrimary underline text-xl'>best. Studio. Ever.</p>
+            <Button asChild
+              className="hidden whitespace-nowrap bg-brandPrimary px-6 py-6 md:flex font-semibold text-xl 
+            shadow-lg hover:bg-brandPrimary/80 transition duration-300 uppercase">
+              <Link href="/contact">Bigger. Better. Feel</Link>
+            </Button>
+
           </div>
         </div>
       </div>
