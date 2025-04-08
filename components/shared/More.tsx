@@ -9,6 +9,7 @@ import {
 import { Star } from 'lucide-react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function More() {
   const ref = useRef(null)
@@ -31,10 +32,12 @@ export function More() {
         </motion.div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 md:gap-x-4'>
           <Card className="relative h-80 overflow-hidden border-0 shadow-none  mb-8 md:mb-0">
-            <img
+            <Image
               src="/images/hero-image-photography.jpg"
               alt="Sample"
               className="w-full h-full object-cover"
+              width={100}
+              height={100}
             />
             <div className="absolute inset-0 bg-[#fdf8ea] opacity-70 mix-blend-multiply pointer-events-none" />
 
@@ -49,10 +52,12 @@ export function More() {
           </Card>
 
           <Card className="relative h-80 overflow-hidden -top-12 border-0 shadow-none">
-            <img
+            <Image
               src="/images/hero-image-photography.jpg"
               alt="Sample"
               className="w-full h-full object-cover"
+              width={100}
+              height={100}
             />
 
             {/* Overlay */}

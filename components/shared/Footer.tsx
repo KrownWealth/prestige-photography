@@ -1,7 +1,5 @@
 import Link from "next/link"
 import { Instagram, Facebook, Twitter } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 export function Footer() {
@@ -19,7 +17,7 @@ export function Footer() {
             />
           </Link>
           <p className="text-sm md:text-lg text-gray-500 dark:text-gray-400">
-            Capturing life's special moments <br /> with artistry and passion.
+            Capturing life&apos;s special moments <br /> with artistry and passion.
           </p>
         </div>
         <nav className="flex gap-x-6 text-lg font-medium uppercase">

@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion"
 import {
   Card,
 } from "@/components/ui/card"
+import Image from 'next/image'
 
 export function Creatives() {
 
@@ -29,10 +30,12 @@ export function Creatives() {
         </motion.div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 md:gap-x-4'>
           <Card className="relative h-80 overflow-hidden border-0 shadow-none mb-8 md:mb-0">
-            <img
+            <Image
               src="/images/hero-image-photography.jpg"
               alt="Sample"
               className="w-full h-full object-cover"
+              width={100}
+              height={100}
             />
             <div className="absolute inset-0 bg-[#fdf8ea] opacity-70 mix-blend-multiply pointer-events-none" />
 
