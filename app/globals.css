@@ -171,3 +171,7 @@
   margin-bottom: 10px;
   border-radius: 0.5rem;
 }
+
+.image-mask{
+  mask-image:-webkit-radial-gradient(center, white, black)
+}

@@ -39,11 +39,11 @@ export function Header() {
         <div className="flex items-center gap-x-10">
           <Link href="/" className="flex shrink-0 items-center">
             <Image
-              src="/images/prestige-logo.png"
+              src="/images/prestige-logo-transparent.png"
               alt="Site Logo"
-              width={150}
-              height={150}
-              className="h-auto w-[150px]"
+              width={200}
+              height={200}
+              className="h-auto w-[200px]"
             />
           </Link>
 

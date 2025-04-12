@@ -17,7 +17,7 @@ export function About() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold leading-tight"> About Us</h1>
+          <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold leading-tight dark:text-brandPrimaryLightShade"> About Us</h1>
           <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Passionate About Visual Storytelling</h2>
           <p className="mb-6">
             With over 15 years of experience, our photography studio has mastered the art of capturing moments that tell

@@ -59,10 +59,12 @@ export function Creatives() {
           </div>
 
           <Card className="relative h-80 overflow-hidden -top-12 border-0 shadow-none">
-            <img
+            <Image
               src="/images/hero-image-photography.jpg"
               alt="Sample"
               className="w-full h-full object-cover"
+              width={100}
+              height={100}
             />
 
             {/* Overlay */}
