@@ -42,8 +42,7 @@ export function InspirationLoaded() {
               src="/images/hero-image-photography.jpg"
               alt="Sample"
               className="w-full h-full object-cover"
-              width={100}
-              height={100}
+              fill
             />
             <div className="absolute inset-0 bg-[#fdf8ea] opacity-70 mix-blend-multiply pointer-events-none" />
 
@@ -62,8 +61,7 @@ export function InspirationLoaded() {
               src="/images/hero-image-photography.jpg"
               alt="Sample"
               className="w-full h-full object-cover"
-              width={100}
-              height={100}
+              fill
             />
 
             {/* Overlay */}

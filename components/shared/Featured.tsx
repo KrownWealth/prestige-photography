@@ -31,9 +31,8 @@ export function Featured() {
             <Image
               src="/images/hero-image-photography.jpg"
               alt="Sample"
+              fill
               className="w-full h-full object-cover"
-              width={100}
-              height={100}
             />
             <div className="absolute inset-0 bg-[#fdf8ea] opacity-70 mix-blend-multiply pointer-events-none" />
 
@@ -51,9 +50,8 @@ export function Featured() {
             <Image
               src="/images/hero-image-photography.jpg"
               alt="Sample"
+              fill
               className="w-full h-full object-cover"
-              width={100}
-              height={100}
             />
 
             {/* Overlay */}
