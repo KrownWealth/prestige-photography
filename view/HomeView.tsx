@@ -3,7 +3,7 @@ import React from 'react'
 
 export function HomeView() {
   return (
-    <>
+    <main>
       <Hero />
       <Featured />
       <Creatives />
@@ -12,7 +12,7 @@ export function HomeView() {
       <About />
       <Contact />
       <TestimonialSection />
-    </>
+    </main>
   )
 }
 

@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-background px-8">
       <div className="container flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-12">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-row md:flex-col gap-2">
           <Link href="/" className="text-lg font-bold">
             <Image
               src="/images/prestige-logo.png"
