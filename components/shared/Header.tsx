@@ -37,7 +37,7 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-screen-2xl items-center justify-between  px-4 lg:px-8">
         {/* Left side: Logo and Navigation */}
         <div className="flex items-center gap-x-10">
-          <Link href="/" className="flex shrink-0 items-center">
+          <Link href="/" className="flex shrink-0 items-center -mr-8 md:mr-0">
             <Image
               src="/images/prestige-logo-transparent.png"
               alt="Site Logo"
@@ -77,11 +77,11 @@ export function Header() {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
-                <Menu className="h-5 w-5" />
+                <Menu className="h-5 w-5 dark:text-brandPrimaryLightShade" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] dark:text-brandPrimaryLightShade">
               <nav className="mt-8 flex flex-col gap-2">
                 <Link href="/" className="rounded-md px-4 py-2 text-lg hover:bg-accent">
                   Home

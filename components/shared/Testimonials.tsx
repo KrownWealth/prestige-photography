@@ -77,7 +77,7 @@ export function TestimonialSection() {
       <div className="px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-screen-2xl mx-auto pt-16 pb-10">
         {/* Left Text */}
         <div className="space-y-4 text-start">
-          <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold leading-tight dark:text-brandPrimaryLightShade">Client Testimonials</h1>
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-tight dark:text-brandPrimaryLightShade">Client Testimonials</h1>
           <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed  max-w-[700px]">
             Don&apos;t just take my word for it. Here&apos;s what my clients have to say.
           </p>

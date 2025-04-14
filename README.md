@@ -1,8 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prestige Photography - README
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Prestige Photography is a modern, high-performance photography portfolio website designed to showcase my friend's work to a broader audience. The site leverages cloud-based storage (Cloudinary) for media management, ensuring fast delivery and scalability.
+
+**Live Site:** [https://prestige-photography.vercel.app](https://prestige-photography.vercel.app) 
+
+## Key Features
+
+- 🖼️ **Gallery Display**: Beautifully organized photo gallery with responsive mansory grid layout
+- ☁️ **Cloudinary Integration**: All media files stored and delivered via Cloudinary CDN
+- 🌓 **Dark/Light Mode**: Customizable theme with persistent user preference
+- ⚡ **Next.js Performance**: Optimized for speed and SEO
+- ✨ **Shadcn UI Components**: Modern, accessible UI elements
+- 📱 **Fully Responsive**: Looks great on all devices
+
+## Technology Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **UI Library**: [Shadcn UI](https://ui.shadcn.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Media Storage**: [Cloudinary](https://cloudinary.com/)
+- **Hosting**: [Vercel](https://vercel.com/)
+- **Font**: Proxima Nova (Custom loaded)
+
+## Project Structure
+
+```
+prestige-photography/
+├── public/                  # Static assets
+│   ├── fonts/               # Custom font files
+│   └── images/              # Static images
+├── src/
+│   ├── app/                 # Next.js app router
+│   │   ├── (gallery)        # Gallery page
+│   │   ├── layout.tsx       # Root layout
+│   │   └── page.tsx         # Home page
+│   ├── components/          # Reusable components
+│   │   ├── shared/          # Layout components
+│   │   └── ui/              # Shadcn components
+│   ├── lib/                 # Utilities/config
+│   └── styles/              # Global styles
+├── next.config.js           # Next.js config
+└── tailwind.config.js       # Tailwind config
+```
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/prestige-photography.git
+cd prestige-photography
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### 3. Environment Variables
+
+Create a `.env.local` file in the root directory with the following:
+
+```env
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+NEXT_PUBLIC_CLOUDINARY_API_KEY=your_api_key
+# (Keep API secret server-side only)
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
@@ -10,27 +82,49 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Vercel
 
-## Learn More
+1. Push your code to a GitHub/GitLab/Bitbucket repository
+2. Create a new project on Vercel and import your repository
+3. Add your environment variables in Vercel's project settings
+4. Deploy!
 
-To learn more about Next.js, take a look at the following resources:
+The site will automatically redeploy on git pushes to the main branch.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Cloudinary Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create a Cloudinary account if you don't have one
+2. Set up a new upload preset with the following settings:
+   - Upload mode: Unsigned (or signed with appropriate permissions)
+   - Format: Auto (f_auto)
+   - Quality: Auto (q_auto)
+3. Configure the following in your environment variables
 
-## Deploy on Vercel
+## Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] **Admin Dashboard**: Secure interface for uploading new photos directly to Cloudinary
+- [ ] **Photo Tagging**: Categorize photos for better organization
+- [ ] **Client Galleries**: Password-protected galleries for clients
+- [ ] **Contact Form**: Integrated with email service
+- [ ] **Blog**: For behind-the-scenes content and announcements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+While this is currently a personal project, contributions are welcome! Please open an issue first to discuss any changes.
+
+## License
+
+This project is currently private. All rights reserved by the photographer.
+
+---
+
+**Photographer Contact:** [photographer@email.com](mailto:photographer@email.com)  
+**Developer Contact:** [your@email.com](mailto:your@email.com)
+
+*Last updated: {DATE}*

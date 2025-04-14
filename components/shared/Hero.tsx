@@ -26,7 +26,7 @@ export function Hero() {
           className="w-full pt-16 lg:pt-8 items-center justify-center 
           flex flex-col lg:items-start lg:justify-start text-center lg:text-left"
         >
-          <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold leading-tight ">
+          <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold leading-tight dark:text-brandPrimaryLightShade ">
             Capturing Moments &
             <br />
             <span className="text-yellow-400">Lifetime Memories.</span>

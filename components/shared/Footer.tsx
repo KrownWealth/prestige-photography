@@ -7,13 +7,13 @@ export function Footer() {
     <footer className="bg-background px-8">
       <div className="container flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-12">
         <div className="flex flex-col gap-2">
-          <Link href="/" className="text-lg font-bold">
+          <Link href="/" className="text-lg font-bold justify-start items-start -mr-8 md:mr-0">
             <Image
               src="/images/prestige-logo-transparent.png"
               alt="Site Logo"
               width={150}
               height={150}
-              className="h-auto w-[150px]"
+
             />
           </Link>
           <p className="text-sm md:text-lg text-gray-500 dark:text-gray-400">
