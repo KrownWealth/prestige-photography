@@ -23,19 +23,18 @@ export default function GalleryItem({ item }: GalleryItemProps) {
     <>
 
       {/* Loading skeleton */}
-      {!isLoaded && (
+      {/* {!isLoaded && (
         <div
           className="absolute inset-0 dark:bg-white animate-pulse"
           style={{ paddingBottom: `${(1 / aspectRatio) * 100}%` }}
         />
-      )}
+      )} */}
 
       {item.type === "image" ? (
         <CldImage
           src={item.src || "/placeholder.svg"}
           alt={item.alt || item.title}
           className={`object-cover w-full h-auto bg-transparent  rounded-2xl `}
-          style={{ paddingBottom: `${(1 / aspectRatio) * 100}%` }}
           onLoad={() => setIsLoaded(true)}
           width={500}
           height={500}

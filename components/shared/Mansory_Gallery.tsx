@@ -28,20 +28,22 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
     setState((prev) => ({ ...prev, loading: true }))
 
     try {
-      const result = await fetchMediaFromCloud(page)
+      // Adjust item fetch count based on the page
+      const fetchCount = page === 1 ? 15 : 6
+      const { items: newItems, hasMore: more, nextPage } = await fetchMediaFromCloud(page, fetchCount)
 
       // Filter the items based on the selected filter
       const filteredItems =
         filter === "all"
-          ? result.items
-          : result.items.filter((item) => (filter === "images" ? item.type === "image" : item.type === "video"))
+          ? newItems
+          : newItems.filter((item) => (filter === "images" ? item.type === "image" : item.type === "video"))
 
       setState((prev) => ({
         items: [...prev.items, ...filteredItems],
         loading: false,
         error: null,
-        page: result.nextPage,
-        hasMore: result.hasMore && filteredItems.length > 0,
+        page: nextPage,
+        hasMore: more && filteredItems.length > 0,
       }))
     } catch {
       setState((prev) => ({
@@ -65,7 +67,7 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
 
       if (node) observer.current.observe(node)
     },
-    [loading, hasMore, loadMoreItems], // Added loadMoreItems to dependencies
+    [loading, hasMore, loadMoreItems],
   )
 
   // Reset state when filter changes
@@ -97,15 +99,16 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
   const getAspectRatio = (item: GalleryItemType): number => {
     if (item.aspectRatio) return item.aspectRatio
     if (item.width && item.height) return item.width / item.height
-    return 2 / 3 // recommended 2:3 ratio
+    return 2 / 3
   }
+
 
   const getColumns = () => {
     let columnCount = 2
 
-    if (windowWidth >= 1280) columnCount = 6
-    else if (windowWidth >= 768) columnCount = 4
-    else if (windowWidth >= 640) columnCount = 3
+    if (windowWidth >= 1280) columnCount = 6;
+    else if (windowWidth >= 768) columnCount = 4;
+    else if (windowWidth >= 640) columnCount = 3;
 
     const columns: GalleryItemType[][] = Array.from({ length: columnCount }, () => [])
 
@@ -143,7 +146,10 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
               <div key={`${item.id}-${index}`} className="mb-2">
                 <GalleryItem item={item} />
                 <div>
-                  <h3 className="font-medium text-sm truncate dark:text-white py-2 px-4">{item.title}</h3>
+                  <h3 className="font-medium text-sm truncate dark:text-white py-2 px-4">
+                    {item.title.length > 20 ? `${item.title.slice(0, 20)}...` : item.title}
+                  </h3>
+
                 </div>
               </div>
             ))}
