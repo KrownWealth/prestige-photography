@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useMemo, useState } from "react"
+import { useState } from "react"
 import type { GalleryItemType } from "@/types/gallery"
 import { CldImage, CldVideoPlayer } from 'next-cloudinary';
 
@@ -12,11 +12,11 @@ interface GalleryItemProps {
 export default function GalleryItem({ item }: GalleryItemProps) {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const aspectRatio = useMemo(() => {
-    if (item.aspectRatio) return item.aspectRatio
-    if (item.width && item.height) return item.width / item.height
-    return 2 / 3
-  }, [item.aspectRatio, item.width, item.height])
+  // const aspectRatio = useMemo(() => {
+  //   if (item.aspectRatio) return item.aspectRatio
+  //   if (item.width && item.height) return item.width / item.height
+  //   return 2 / 3
+  // }, [item.aspectRatio, item.width, item.height])
 
 
   return (
