@@ -24,6 +24,9 @@ Prestige Photography is a modern, high-performance photography portfolio website
 - **Hosting**: [Vercel](https://vercel.com/)
 - **Font**: Proxima Nova (Custom loaded)
 
+## Image Attribution
+During development, placeholder images from Pexels were used under their free license. These will be replaced with the photographer's original work in the future.
+
 ## Project Structure
 
 ```
@@ -114,9 +117,6 @@ The site will automatically redeploy on git pushes to the main branch.
 - [ ] **Contact Form**: Integrated with email service
 - [ ] **Blog**: For behind-the-scenes content and announcements
 
-## Contributing
-
-While this is currently a personal project, contributions are welcome! Please open an issue first to discuss any changes.
 
 ## License
 
@@ -124,7 +124,7 @@ This project is currently private. All rights reserved by the photographer.
 
 ---
 
-**Photographer Contact:** [photographer@email.com](mailto:photographer@email.com)  
-**Developer Contact:** [your@email.com](mailto:your@email.com)
+<!-- **Photographer Contact:** [photographer@email.com](mailto:photographer@email.com)  
+**Developer Contact:** [your@email.com](mailto:your@email.com) -->
 
 *Last updated: {DATE}*

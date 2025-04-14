@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect, useRef, useCallback } from "react"
 import GalleryItem from "./Gallery_Item"
 import type { GalleryItemType, GalleryState } from "@/types/gallery"
@@ -12,6 +14,9 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
     page: 1,
     hasMore: true,
   })
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  )
 
   const { items, loading, error, page, hasMore } = state
   const observer = useRef<IntersectionObserver | null>(null)
@@ -79,7 +84,15 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
     if (items.length === 0 && !loading && hasMore) {
       loadMoreItems()
     }
-  }, [items.length, filter, loading, hasMore, loadMoreItems]) // loadMoreItems included in dependencies
+  }, [items.length, filter, loading, hasMore, loadMoreItems])
+
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const getAspectRatio = (item: GalleryItemType): number => {
     if (item.aspectRatio) return item.aspectRatio
@@ -90,12 +103,9 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
   const getColumns = () => {
     let columnCount = 2
 
-    if (typeof window !== "undefined") {
-      const width = window.innerWidth
-      if (width >= 1280) columnCount = 6
-      else if (width >= 768) columnCount = 4
-      else if (width >= 640) columnCount = 3
-    }
+    if (windowWidth >= 1280) columnCount = 6
+    else if (windowWidth >= 768) columnCount = 4
+    else if (windowWidth >= 640) columnCount = 3
 
     const columns: GalleryItemType[][] = Array.from({ length: columnCount }, () => [])
 
@@ -129,9 +139,9 @@ export default function MasonryGallery({ filter = "all" }: { filter?: string }) 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {getColumns().map((column, columnIndex) => (
           <div key={`column-${columnIndex}`} className="flex flex-col gap-4 cursor-pointer border-none">
-            {column.map((item) => (
-              <div key={item.id} className="mb-2">
-                <GalleryItem key={item.id} item={item} />
+            {column.map((item, index) => (
+              <div key={`${item.id}-${index}`} className="mb-2">
+                <GalleryItem item={item} />
                 <div>
                   <h3 className="font-medium text-sm truncate dark:text-white py-2 px-4">{item.title}</h3>
                 </div>

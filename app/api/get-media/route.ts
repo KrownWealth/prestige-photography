@@ -11,8 +11,8 @@ cloudinary.config({
 
 export async function GET() {
   try {
-    //const folderPrefix = "prestige-photography/";
-    const folderPrefix = "apple-remastered/images/";
+    const folderPrefix = "prestige-photography/";
+    // const folderPrefix = "apple-remastered/images/";
 
     const [imagesResult, videosResult] = await Promise.all([
       cloudinary.api.resources({

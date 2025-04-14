@@ -1,5 +1,11 @@
 "use client";
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
 interface GalleryFilterProps {
   onFilterChange: (filter: string) => void;
   activeFilter: string;
@@ -12,22 +18,43 @@ export default function GalleryFilter({
   tabs,
 }: GalleryFilterProps) {
   return (
-    <div className="flex justify-start mb-6 w-full">
-      <div className="w-full flex flex-row flex-wrap uppercase space-x-6 py-4 bg-[#fff8e5] border-l-8
-       border-brandPrimary pl-4 mb-10 text-black font-semibold text-lg">
-        {tabs.map((tab) => (
-          <button
-            key={tab.value}
-            onClick={() => onFilterChange(tab.value)}
-            className={`transition-colors duration-200 text-sm ${activeFilter === tab.value
-              ? "text-brandPrimary underline underline-offset-4"
-              : "text-black hover:text-brandPrimary"
-              }`}
+    <Carousel className="w-full mb-6">
+      <CarouselContent className="py-3 bg-brandPrimaryLightShade border-l-4 border-brandPrimary">
+        {tabs.map((tab, index) => (
+          <CarouselItem
+            className="basis-auto shrink-0 grow-0 pr-4"
+            key={index}
           >
-            {tab.label}
-          </button>
+            <CategoryItem
+              item={tab.label}
+              active={activeFilter === tab.value}
+              onPress={() => onFilterChange(tab.value)}
+            />
+          </CarouselItem>
         ))}
-      </div>
-    </div>
+      </CarouselContent>
+    </Carousel>
   );
 }
+
+const CategoryItem = ({
+  item,
+  active,
+  onPress,
+}: {
+  item: string;
+  active: boolean;
+  onPress: () => void;
+}) => {
+  return (
+    <button
+      onClick={onPress}
+      className={`transition-colors duration-200 whitespace-nowrap capitalize text-sm font-semibold ${active
+        ? "text-brandPrimary underline underline-offset-4"
+        : "text-black hover:text-brandPrimary"
+        }`}
+    >
+      {item}
+    </button>
+  );
+};
