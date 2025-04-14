@@ -4,6 +4,8 @@
 
 Prestige Photography is a modern, high-performance photography portfolio website designed to showcase my friend's work to a broader audience. The site leverages cloud-based storage (Cloudinary) for media management, ensuring fast delivery and scalability.
 
+![Prestige-Photography-04-14-2025_05_53_PM](https://github.com/user-attachments/assets/f0090e84-68db-4faf-a124-8fb233175138)
+
 **Live Site:** [https://prestige-photography.vercel.app](https://prestige-photography.vercel.app) 
 
 ## Key Features
